@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkPad | Think+</title>
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation - full width background -->
+    <!-- Navigation - full width background -->
+    <nav class="w-full py-4 main-nav">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html#home" class="flex items-center">
+                    <img src="assets/icon.png" alt="Think+" class="h-8 w-8 mr-2">
+                    <span class="font-medium">Think+</span>
+                </a>
+            </div>
+            <div class="flex items-center">
+                <div class="flex items-center space-x-6 desktop-menu">
+                    <a href="index.html#shop" class="text-sm">All products</a>
+                    <a href="#" class="text-sm">Contact us</a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle ml-4 focus:outline-none" aria-label="Toggle dark mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="theme-light-icon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="theme-dark-icon h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="hamburger-menu ml-4">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="close-menu"></div>
+        <a href="index.html#shop" class="block">All products</a>
+        <a href="#" class="block">Contact us</a>
+        <div class="mobile-actions">
+            <button id="mobile-theme-toggle" class="w-full bg-red-600 text-white">Toggle Dark Mode</button>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-2">
+
+        <!-- Breadcrumb -->
+        <div class="container mx-auto px-4 py-2">
+        <!-- Breadcrumb -->
+        <div class="flex text-sm text-gray-500 mt-8">
+            <a href="index.html#home" class="hover:text-red-600 dark:text-white dark:hover:text-red-600">Home</a>
+            <span class="mx-2">/</span>
+            <a href="index.html#shop" class="hover:text-red-600 dark:text-white dark:hover:text-red-600">Shop</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 dark:text-white dark:text-white">ThinkPad T595</span>
+        </div>
+
+        <!-- Product Content -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Product Images -->
+            <div>
+                <div class="mb-4 bg-gray-50 rounded-lg p-8">
+                    <img id="main-image" src="assets/Thinkpad T595s/1.jpg" alt="ThinkPad T595" class="mx-auto h-80 object-contain">
+                </div>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="bg-gray-50 p-3 rounded-lg cursor-pointer hover:bg-gray-100 transition thumbnail-image">
+                        <img src="assets/Thinkpad T595s/1.jpg" alt="ThinkPad T595 Front View" class="h-20 w-full object-contain">
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg cursor-pointer hover:bg-gray-100 transition thumbnail-image">
+                        <img src="assets/Thinkpad T595s/3.jpg" alt="ThinkPad T595 Side View" class="h-20 w-full object-contain">
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg cursor-pointer hover:bg-gray-100 transition thumbnail-image">
+                        <img src="assets/Thinkpad T595s/2.jpg" alt="ThinkPad T595 Detail View" class="h-20 w-full object-contain">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <h1 class="text-3xl font-bold">ThinkPad T595</h1>
+                <p class="mt-4 text-gray-600">
+                    A high-performance business laptop with a larger display, perfect for professionals who need screen real estate for complex tasks.
+                </p>
+                <div class="mt-6 text-2xl font-medium">₱14,000</div>
+                <button id="buy-now" class="mt-6 w-full bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition">Buy now</button>
+
+                <!-- Accordion Sections -->
+                <div class="mt-10 border-t border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                    <div class="py-4 flex justify-between items-center cursor-pointer accordion-header">
+                        <div class="font-medium">Product Specifications</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accordion-icon">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="pb-4 hidden accordion-content">
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• AMD Ryzen 5 3500U Processor</li>
+                            <li>• 16GB RAM</li>
+                            <li>• 256GB SSD Storage</li>
+                            <li>• 14" Full HD Display (1920x1080)</li>
+                            <li>• AMD Radeon Vega 8 Graphics</li>
+                            <li>• Solid Performance for Everyday Multitasking</li>
+                            <li>• Business-Class Durability</li>
+                            <li>• Windows 11 Pro</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-b border-gray-200 dark:border-gray-700">
+                    <div class="py-4 flex justify-between items-center cursor-pointer accordion-header">
+                        <div class="font-medium">Shipping & delivery</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accordion-icon">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="pb-4 hidden accordion-content">
+                        <li>Metro Manila: Free shipping with same-day delivery available.</li>
+                        <li>Outside Metro Manila: Shipping fees may apply depending on the location. Delivery may take a few business days.</li>
+                    </div>
+                </div>
+
+                <div class="border-b border-gray-200 dark:border-gray-700">
+                    <div class="py-4 flex justify-between items-center cursor-pointer accordion-header">
+                        <div class="font-medium">Warranty</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accordion-icon">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="pb-4 hidden accordion-content">
+                        <li>All items include a 1-week warranty.</li>
+                        <li>Returns or exchanges are accepted within this period for any valid concerns</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Features -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-medium mb-2">High-Performance Keyboard Design</h3>
+                <p class="text-gray-600 text-sm mb-4">Known for its precision and comfort, the T595s keyboard includes well-spaced keys and ergonomic feedback, suitable for extended professional use.</p>
+                <img src="assets/Thinkpad T595s/2.jpg" alt="Display Demo" class="w-full h-48 object-cover rounded">
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-medium mb-2">Comprehensive Connectivity Suite</h3>
+                <p class="text-gray-600 text-sm mb-4">With USB-C, USB 3.1, HDMI, and docking options, the T595s supports modern business setups with fast, flexible port options.</p>
+                <img src="assets/Thinkpad T595s/4.jpg" alt="Performance Demo" class="w-full h-48 object-cover rounded">
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-medium mb-2">Slim but Durable Construction</h3>
+                <p class="text-gray-600 text-sm mb-4">The T595s integrates a slim profile with a durable chassis, designed to withstand the demands of professional mobility without sacrificing strength.</p>
+                <img src="assets/Thinkpad T595s/3.jpg" alt="Enterprise Demo" class="w-full h-48 object-cover rounded">
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-6">Related Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="related-product" style="--animation-order: 1" bg-gray-50 p-6 rounded-lg">
+                    <a href="product8.html" class="block h-full flex flex-col">
+                        <div class="flex-grow flex items-center justify-center mb-4">
+                            <img src="assets/thumbnails/8.png" alt="ThinkPad T470" class="max-h-full object-contain">
+                        </div>
+                        <div class="flex justify-between items-center mt-auto">
+                            <h3 class="text-sm">ThinkPad T470</h3>
+                            <span class="text-xs text-gray-500">₱12,500</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="related-product" style="--animation-order: 2" bg-gray-50 p-6 rounded-lg">
+                    <a href="product3.html" class="block h-full flex flex-col">
+                        <div class="flex-grow flex items-center justify-center mb-4">
+                            <img src="assets/thumbnails/4.png" alt="ThinkPad L590" class="max-h-full object-contain">
+                        </div>
+                        <div class="flex justify-between items-center mt-auto">
+                            <h3 class="text-sm">ThinkPad L590</h3>
+                            <span class="text-xs text-gray-500">₱12,500</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="related-product" style="--animation-order: 3" bg-gray-50 p-6 rounded-lg">
+                    <a href="product2.html" class="block h-full flex flex-col">
+                        <div class="flex-grow flex items-center justify-center mb-4">
+                            <img src="assets/thumbnails/3.png" alt="ThinkPad P52" class="max-h-full object-contain">
+                        </div>
+                        <div class="flex justify-between items-center mt-auto">
+                            <h3 class="text-sm">ThinkPad P52</h3>
+                            <span class="text-xs text-gray-500">₱18,500</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <!-- Footer -->
+    </div>
+
+<footer class="border-t border-gray-200 py-8 mt-16 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p class="footer-author">Created By <span>Christian Deo Manlangit</span></p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">© 2025 Think+. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://github.com/ChristianDeoManlangit" class="text-gray-500 hover:text-gray-600 dark:hover:text-white">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

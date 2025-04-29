@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think+ | Shop</title>
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+    <!-- Navigation - full width background -->
+    <nav class="w-full py-4 main-nav">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html#home" class="flex items-center">
+                    <img src="assets/icon.png" alt="Think+" class="h-8 w-8 mr-2">
+                    <span class="font-medium">Think+</span>
+                </a>
+            </div>
+            <div class="flex items-center">
+                <div class="flex items-center space-x-6 desktop-menu">
+                    <a href="index.html#shop" class="text-sm">All products</a>
+                    <a href="#" class="text-sm">Contact us</a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle ml-4 focus:outline-none" aria-label="Toggle dark mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="theme-light-icon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="theme-dark-icon h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="hamburger-menu ml-4">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="close-menu"></div>
+        <a href="index.html#shop" class="block">All products</a>
+        <a href="#" class="block">Contact us</a>
+        <div class="mobile-actions">
+            <button id="mobile-theme-toggle" class="w-full bg-red-600 text-white">Toggle Dark Mode</button>
+        </div>
+    </div>
+    
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-6xl font-bold mb-6">Think+</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+                Explore high-quality, business-grade ThinkPads curated for performance, durability, and professional excellence.
+            </p>
+            <button id="explore-button" class="bg-red-600 text-white text-xl px-8 py-4 rounded-full hover:bg-red-700 transition transform hover:scale-105 hover:shadow-xl">
+                Find the ThinkPad just for you! ↓
+            </button>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-4 py-2">
+        <!-- Shop Section -->
+        <div id="shop" class="mt-16 pt-16">
+            <h1 class="text-4xl font-bold">Shop</h1>
+            <p class="text-gray-600 mt-2">Check out our full collection of products tailored to your needs.</p>
+        </div>
+
+        <!-- Filter and Search Section -->
+        <div class="mt-8 filter-search-container">
+            <!-- Search Bar (will be positioned above filters in responsive views) -->
+            <div class="responsive-search w-full lg:w-auto lg:ml-auto lg:order-2 mb-4 lg:mb-0">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="Search" class="pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-200 w-full">
+                    <div class="absolute left-3 top-2.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category Filters -->
+            <div class="category-filters flex-grow lg:flex-grow-0 flex flex-wrap lg:order-1">
+                <button class="category-filter px-4 py-2 rounded-full bg-black text-white mr-2 mb-2" data-category="all">All products</button>
+                <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-800 mr-2 mb-2 hover:bg-gray-200" data-category="x-series">X Series</button>
+                <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-800 mr-2 mb-2 hover:bg-gray-200" data-category="t-series">T Series</button>
+                <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-800 mr-2 mb-2 hover:bg-gray-200" data-category="l-series">L Series</button>
+                <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-800 mr-2 mb-2 hover:bg-gray-200" data-category="p-series">P Series</button>
+                <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-800 mr-2 mb-2 hover:bg-gray-200" data-category="yoga-series">Yoga Series</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6" id="product-grid">
+            <!-- Product 1 - Yoga Series (X1 Yoga) -->
+            <div class="product-card bg-gray-50 p-6 rounded-lg" data-category="yoga-series" style="--animation-order: 0">
+                <a href="product7.html" class="block h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <img src="assets/thumbnails/1.png" alt="ThinkPad X1 Yoga (Gen 5)" class="max-h-full object-contain">
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <h3 class="text-sm font-bold">ThinkPad X1 Yoga (Gen 5)</h3>
+                        <span class="text-xs text-gray-500">₱21,500</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Product 2 - Yoga Series (X390 Yoga) -->
+            <div class="product-card bg-gray-50 p-6 rounded-lg" data-category="yoga-series" style="--animation-order: 1">
+                <a href="product1.html" class="block h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <img src="assets/thumbnails/2.png" alt="ThinkPad X390 Yoga" class="max-h-full object-contain">
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <h3 class="text-sm font-bold">ThinkPad X390 Yoga</h3>
+                        <span class="text-xs text-gray-500">₱16,000</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Product 3 - P Series (P52) -->
+            <div class="product-card bg-gray-50 p-6 rounded-lg" data-category="p-series" style="--animation-order: 2">
+                <a href="product2.html" class="block h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <img src="assets/thumbnails/3.png" alt="ThinkPad P52" class="max-h-full object-contain">
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <h3 class="text-sm font-bold">ThinkPad P52</h3>
+                        <span class="text-xs text-gray-500">₱18,500</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Product 4 - L Series (L590) -->
+            <div class="product-card bg-gray-50 p-6 rounded-lg" data-category="l-series" style="--animation-order: 3">
+                <a href="product3.html" class="block h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <img src="assets/thumbnails/4.png" alt="ThinkPad L590" class="max-h-full object-contain">
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <h3 class="text-sm">ThinkPad L590</h3>
+                        <span class="text-xs text-gray-500">₱12,500</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Product 5 - L Series (L380) -->
+            <div class="product-card bg-gray-50 p-6 rounded-lg" data-category="l-series" style="--animation-order: 4">
+                <a href="product4.html" class="block h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <img src="assets/thumbnails/5.png" alt="ThinkPad L380" class="max-h-full object-contain">
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <h3 class="text-sm">ThinkPad L380</h3>
+                        <span class="text-xs text-gray-500">₱12,300</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Product 6 - X Series (X280) -->
+            <div class="product-card bg-gray-50 p-6 rounded-lg" data-category="x-series" style="--animation-order: 5">
+                <a href="product5.html" class="block h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <img src="assets/thumbnails/6.png" alt="ThinkPad X280" class="max-h-full object-contain">
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <h3 class="text-sm">ThinkPad X280</h3>
+                        <span class="text-xs text-gray-500">₱13,500</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Product 7 - T Series (T595) -->
+            <div class="product-card bg-gray-50 p-6 rounded-lg" data-category="t-series" style="--animation-order: 6">
+                <a href="product6.html" class="block h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <img src="assets/thumbnails/7.png" alt="ThinkPad T595" class="max-h-full object-contain">
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <h3 class="text-sm">ThinkPad T595</h3>
+                        <span class="text-xs text-gray-500">₱14,000</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Product 8 - T Series (T470) -->
+            <div class="product-card bg-gray-50 p-6 rounded-lg" data-category="t-series" style="--animation-order: 7">
+                <a href="product8.html" class="block h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <img src="assets/thumbnails/8.png" alt="ThinkPad T470" class="max-h-full object-contain">
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <h3 class="text-sm">ThinkPad T470</h3>
+                        <span class="text-xs text-gray-500">₱12,500</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Product 9 - X Series (X270) -->
+            <div class="product-card bg-gray-50 p-6 rounded-lg" data-category="x-series" style="--animation-order: 8">
+                <a href="product9.html" class="block h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <img src="assets/thumbnails/9.png" alt="ThinkPad X270" class="max-h-full object-contain">
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <h3 class="text-sm">ThinkPad X270</h3>
+                        <span class="text-xs text-gray-500">₱11,000</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="bg-gray-50 mt-16 py-10 px-8 text-center rounded-lg">
+            <h2 class="text-xl font-semibold">Image Credits</h2>
+            <p class="text-gray-600 mt-2 text-sm">All images used on this website are sourced from DMG Computers. To view their official Facebook page, click the button below.</p>
+            <div class="mt-6 max-w-md mx-auto">
+                <form class="flex flex-col" onsubmit="window.open('https://web.facebook.com/DMGComputersPH', '_blank'); return false;">
+                    <button type="submit" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition w-full">Check their page!</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+    </div>
+
+    <footer class="border-t border-gray-200 py-8 mt-16 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p class="footer-author">Created By <span>Christian Deo Manlangit</span></p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">© 2025 Think+. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://github.com/ChristianDeoManlangit" class="text-gray-500 hover:text-gray-600 dark:hover:text-white">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1099 @@
+/* Custom styles for ThinkPad commerce website */
+
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Home section styles */
+#home {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.dark-mode #home {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+#explore-button {
+    box-shadow: 0 4px 14px rgba(214, 47, 47, 0.3);
+    transition: all 0.3s ease;
+}
+
+#explore-button:hover {
+    box-shadow: 0 6px 20px rgba(214, 47, 47, 0.4);
+}
+
+/* Dark Mode CSS Variables */
+:root {
+    /* Light theme (default) */
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --text-muted: #6b7280;
+    --card-bg: #f9fafb;
+    --card-hover-bg: #f8f8f8;
+    --border-color: #e5e7eb;
+    --accent-color: #D62F2F; /* ThinkPad Red */
+    --button-text: #ffffff;
+    --nav-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --blue-glow: rgba(22, 102, 241, 0.3);
+    --button-bg: #D62F2F; /* ThinkPad Red - Changed to red for light mode */
+    --button-hover-bg: #b52828; /* Darker red for hover */
+    --filter-bg: #f3f4f6;
+    --filter-text: #4b5563;
+    --text-secondary: #6b7280;
+    --newsletter-bg: #f9fafb;
+    --accordion-border: #e5e7eb;
+
+    /* Animation variables */
+    --fade-in-duration: 0.8s;
+    --slide-up-duration: 0.6s;
+    --slide-in-duration: 0.5s;
+}
+
+.dark-mode {
+    /* Dark theme */
+    --background-color: #121212;
+    --text-color: #f3f4f6;
+    --text-muted: #e5e7eb; /* Lighter color for better readability */
+    --card-bg: rgba(30, 30, 30, 0.7);
+    --card-hover-bg: rgba(45, 45, 45, 0.8);
+    --border-color: #2d2d2d;
+    --accent-color: #D62F2F; /* ThinkPad Red */
+    --button-text: #ffffff;
+    --nav-bg: #1a1a1a;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --blue-glow: rgba(214, 47, 47, 0.6); /* Stronger red glow for dark mode */
+    --button-bg: #D62F2F; /* ThinkPad Red */
+    --button-hover-bg: #b52828; /* Darker red for hover */
+    --filter-bg: #262626;
+    --filter-text: #f3f4f6;
+    --text-secondary: #f3f4f6; /* Lighter color for dark mode */
+    --newsletter-bg: rgba(30, 30, 30, 0.7);
+    --accordion-border: #2d2d2d; /* Dark grey border for accordion in dark mode */
+}
+
+/* Font adjustments */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+    color: #444;  /* Darker color for better visibility in light mode */
+    background: transparent !important; /* Ensure no background */
+    border: none !important;
+}
+
+.dark-mode .theme-toggle {
+    color: #f3f4f6; /* Light color for better visibility in dark mode */
+}
+
+.theme-toggle:hover {
+    transform: rotate(30deg);
+    color: var(--accent-color);
+}
+
+/* Dark mode theme toggle icon display */
+.dark-mode .theme-light-icon {
+    display: none;
+}
+
+.dark-mode .theme-dark-icon {
+    display: block;
+}
+
+.theme-dark-icon {
+    display: none;
+}
+
+.theme-light-icon {
+    display: block;
+}
+
+/* Navigation styles */
+nav.main-nav {
+    background-color: var(--nav-bg);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.dark-mode nav.main-nav {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Add padding to body to account for fixed navbar */
+body {
+    padding-top: 4rem;
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    .theme-toggle {
+        display: none;
+    }
+    .desktop-menu {
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex !important;
+    }
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+.close-menu:before,
+.close-menu:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    top: 50%;
+    left: 0;
+}
+
+.close-menu:before {
+    transform: rotate(45deg);
+}
+
+.close-menu:after {
+    transform: rotate(-45deg);
+}
+
+.dark-mode .close-menu:before,
+.dark-mode .close-menu:after {
+    background-color: white;
+}
+
+.hamburger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.dark-mode .hamburger-menu .bar {
+    background-color: white;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mobile-menu.open {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dark-mode .mobile-menu {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.mobile-menu.open {
+    right: 0;
+    opacity: 1;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.close-menu:before,
+.close-menu:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    top: 50%;
+    left: 0;
+}
+
+.close-menu:before {
+    transform: rotate(45deg);
+}
+
+.close-menu:after {
+    transform: rotate(-45deg);
+}
+
+.dark-mode .close-menu:before,
+.dark-mode .close-menu:after {
+    background-color: white;
+}
+
+.mobile-menu a {
+    padding: 15px 0;
+    font-size: 18px;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.dark-mode .mobile-menu a {
+    border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Mobile menu buttons */
+.mobile-menu .mobile-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mobile-menu .mobile-actions button {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Mobile nav toggle animation */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Navigation text colors */
+nav a {
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+/* Light mode hover */
+nav a:hover {
+    color: white;
+    background-color: var(--accent-color); /* Changed to ThinkPad red */
+}
+
+/* Dark mode styling */
+.dark-mode nav a {
+    color: white;
+}
+
+.dark-mode nav a:hover {
+    color: white;
+    background-color: var(--accent-color);
+}
+
+.dark-mode nav svg path {
+    stroke: var(--text-color);
+}
+
+/* Page load animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(40px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-40px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Product page animations */
+.product-details {
+    animation: slideInRight var(--slide-in-duration) ease-out forwards;
+}
+
+.product-gallery {
+    animation: slideInLeft var(--slide-in-duration) ease-out forwards;
+}
+
+.related-products-title {
+    animation: fadeIn var(--fade-in-duration) ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.related-product {
+    animation: slideUp var(--slide-up-duration) ease-out forwards;
+    opacity: 0;
+    animation-delay: calc(var(--animation-order, 0) * 0.1s + 0.4s);
+}
+
+/* Checkout page animations */
+.checkout-product {
+    animation: slideInLeft var(--slide-in-duration) ease-out forwards;
+}
+
+.checkout-form {
+    animation: slideInRight var(--slide-in-duration) ease-out forwards;
+}
+
+.order-summary {
+    animation: scaleIn 0.7s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.container {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.product-card {
+    animation: slideUp 0.6s ease-out forwards;
+    opacity: 0;
+    animation-delay: calc(var(--animation-order, 0) * 0.1s);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    /* aspect-ratio: 4/5; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem; /* Add margin to prevent text overlap */
+    /* Apply transform-origin to ensure scaling from center */
+    transform-origin: center center;
+    overflow: hidden; /* Keep content within rounded corners */
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+/* Dark mode glassmorphism effect */
+.dark-mode .product-card {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.product-card:hover,
+.product-card.hovered {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--shadow-color), 0 0 10px var(--blue-glow);
+    background-color: var(--card-hover-bg);
+    z-index: 1; /* Ensure scaled items appear above others */
+}
+
+/* Make the product card have a hover pointer cursor */
+.product-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Make the anchor fill the entire card */
+.product-card a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* Ensure product text is always visible */
+.product-card .flex-grow {
+    flex: 1;
+    min-height: 0;
+}
+
+.product-card .mt-auto {
+    margin-top: 0.5rem;
+}
+
+/* Make all product names bold */
+.product-card h3, .related-product h3 {
+    font-weight: bold;
+}
+
+/* Smooth transitions */
+.transition {
+    transition: all 0.3s ease;
+}
+
+/* Button styling */
+button,
+.btn,
+.hover\:bg-gray-900 {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    transition: all 0.3s ease;
+}
+
+/* ThinkPad red buttons in dark mode */
+.dark-mode button,
+.dark-mode .btn,
+.dark-mode .hover\:bg-gray-900,
+.dark-mode .bg-black {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Button hover effects */
+button:hover, 
+.btn:hover,
+.hover\:bg-gray-900:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    background-color: var(--button-hover-bg);
+}
+
+/* Fix image alignments */
+.object-contain {
+    object-fit: contain;
+}
+
+/* Form elements styling */
+input, 
+select,
+textarea {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+/* Dark mode glassmorphism for inputs */
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Improve form input focus */
+input:focus, 
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(214, 47, 47, 0.2);
+}
+
+/* Custom styling for the thumbnail when active */
+.thumbnail-image.active {
+    border: 2px solid var(--accent-color);
+}
+
+.dark-mode .thumbnail-image.active {
+    border: 2px solid var(--accent-color);
+}
+
+/* Product image gallery styles */
+#main-image {
+    transition: all 0.3s ease;
+}
+
+.image-gallery-container {
+    position: relative;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.gallery-nav:hover {
+    background-color: var(--button-hover-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-prev {
+    left: 10px;
+}
+
+.gallery-next {
+    right: 10px;
+}
+
+
+/* Main image and thumbnail styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.product-grid > div {
+    /* aspect-ratio: 1; */
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 0.25rem;
+    }
+}
+
+/* Hide scrollbar but keep functionality */
+.product-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.product-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.thumbnail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Add subtle hover effects to buttons */
+.hover\:bg-gray-200:hover,
+.hover\:bg-gray-100:hover,
+.hover\:bg-gray-900:hover {
+    transition: all 0.2s ease;
+}
+
+/* Accordion animation and styles */
+.accordion-content {
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+}
+
+/* Accordion border styles */
+.accordion-header {
+    border-color: var(--accordion-border);
+}
+
+.dark-mode .accordion-header {
+    border-color: var(--accordion-border);
+}
+
+/* Ensure borders are properly colored in dark mode */
+.dark-mode .border-gray-200 {
+    border-color: var(--accordion-border) !important;
+}
+
+/* Remove ghost image styles */
+.additional-images,
+.additional-image {
+    display: none !important;
+}
+
+/* Responsive navigation and search bar adjustments */
+/* For mobile devices */
+@media (max-width: 768px) {
+    .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .space-x-6 > * + * {
+        margin-left: 1rem;
+    }
+
+    /* Show hamburger menu */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Hide desktop nav links */
+    .desktop-menu {
+        display: none !important;
+    }
+
+    /* Adjust container padding for better mobile experience */
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    /* Ensure proper spacing below fixed navbar */
+    body {
+        padding-top: 4rem;
+    }
+
+    /* Keep grid columns for all screen sizes */
+    .grid-cols-2, .grid-cols-3, .grid-cols-4 {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 0.5rem;
+    }
+}
+
+/* Adjust image sizing for very small screens */
+@media (max-width: 480px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .grid-cols-2, .grid-cols-3, .grid-cols-4 {
+        gap: 0.25rem;
+    }
+}
+
+/* Filter and search container layout */
+.filter-search-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Category filter button styles */
+.category-filter {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+/* Active filter button - light mode */
+.category-filter.active,
+.bg-black.text-white {
+    background-color: var(--accent-color) !important; /* ThinkPad red */
+    color: white !important;
+}
+
+/* Dark mode filter buttons */
+.dark-mode .category-filter {
+    background-color: rgba(50, 50, 50, 0.7);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Active filter button - dark mode */
+.dark-mode .category-filter.active,
+.dark-mode .bg-black.text-white {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+}
+
+/* Default desktop layout (lg screens and up) */
+@media (min-width: 1024px) {
+    .filter-search-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .responsive-search {
+        order: 2;
+    }
+
+    .category-filters {
+        order: 1;
+    }
+}
+
+/* For tablets and smaller desktop screens (below lg) */
+@media (max-width: 1023px) {
+    .filter-search-container {
+        flex-direction: column;
+    }
+
+    .responsive-search {
+        width: 100%;
+        margin-bottom: 1rem;
+        order: 1; /* Search appears first */
+    }
+
+    .category-filters {
+        width: 100%;
+        order: 2; /* Categories appear second */
+    }
+
+    .responsive-search input {
+        width: 100%;
+    }
+}
+
+/* Ensure the search bar looks good at all breakpoints */
+.responsive-search {
+    transition: all 0.3s ease;
+}
+
+/* Checkout page specific styles */
+#decrease-quantity,
+#increase-quantity {
+    transition: all 0.2s;
+    background-color: var(--button-bg);
+    color: white;
+}
+
+#decrease-quantity:hover,
+#increase-quantity:hover {
+    background-color: var(--button-hover-bg);
+    color: white;
+}
+
+/* Focus states for form elements */
+input:focus, 
+select:focus, 
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styling for error states */
+.border-red-500 {
+    border-color: #ef4444 !important;
+}
+
+/* Typography refinements */
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.01em;
+}
+
+/* Image thumbnail hover effect */
+.thumbnail-image:hover img {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Slideshow dots */
+.slideshow-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem; /* Added more spacing below the dots */
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dot.active {
+    background-color: var(--text-color);
+    transform: scale(1.2);
+}
+
+.dark-mode .dot {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .dot.active {
+    background-color: var(--accent-color);
+}
+
+/* Related products styling */
+.related-product {
+    aspect-ratio: 4/5;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transform-origin: center center;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.related-product .flex-grow {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.related-product .mt-auto {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.related-product h3 {
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.related-product .text-xs {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Dark mode glassmorphism effect for related products */
+.dark-mode .related-product {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.related-product:hover,
+.related-product.hovered {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--shadow-color), 0 0 10px var(--blue-glow);
+    z-index: 1; /* Ensure scaled items appear above others */
+}
+
+/* No color fill on hover */
+.related-product:hover,
+.related-product.hovered {
+    background-color: var(--card-bg);
+}
+
+.dark-mode .related-product:hover,
+.dark-mode .related-product.hovered {
+    background: rgba(30, 30, 30, 0.7);
+}
+
+/* Make the related product have a hover pointer cursor */
+.related-product {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Make the anchor fill the entire card */
+.related-product a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.related-product .flex-grow {
+    flex: 1;
+    min-height: 0;
+}
+
+.related-product .mt-auto {
+    margin-top: 0.5rem;
+}
+
+/* Newsletter section */
+.newsletter,
+.bg-gray-50 {
+    background-color: var(--newsletter-bg);
+    transition: all 0.3s ease;
+}
+
+.dark-mode .newsletter,
+.dark-mode .bg-gray-50 {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Footer styling */
+footer {
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+    background-color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Footer author styling */
+.footer-author {
+    color: black;
+}
+
+.footer-author span {
+    color: var(--accent-color);
+}
+
+.dark-mode footer {
+    border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    background-color: var(--background-color);
+}
+
+.dark-mode .footer-author {
+    color: white;
+}
+
+.dark-mode .footer-author span {
+    color: var(--accent-color);
+}
+
+.dark-mode footer a {
+    color: white;
+}
+
+.dark-mode footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Paragraph text in dark mode */
+.dark-mode p, 
+.dark-mode .text-gray-500, 
+.dark-mode .text-gray-600, 
+.dark-mode .text-sm.text-gray-500, 
+.dark-mode .text-sm.text-gray-600 {
+    color: var(--text-muted);
+}
+
+nav a:hover {
+    color: white;
+    background-color: var(--accent-color); /* Changed to ThinkPad red */
+}
+
+.dark-mode nav a:hover {
+    background-color: var(--accent-color);
+}
+
+
+/* Light mode hover for nav buttons */
+nav a:hover {
+    background-color: var(--accent-color); /* Red hover */
+}
+
+/* Dark mode hover for nav buttons */
+.dark-mode nav a:hover {
+    background-color: var(--accent-color); /* Red hover */
+}
+
+/* Slideshow dots - Light mode */
+.dot {
+    background-color: rgba(214, 47, 47, 0.3); /* Light red */
+}
+
+.dot.active {
+    background-color: var(--accent-color); /* ThinkPad red */
+}
+
+/* Slideshow dots - Dark mode */
+.dark-mode .dot {
+    background-color: rgba(255, 255, 255, 0.2); /* Light grey */
+}
+
+.dark-mode .dot.active {
+    background-color: var(--accent-color); /* Red */
+}
+
+/* Dark mode text color for specific divs */
+.dark-mode .flex.text-sm.text-gray-500 {
+    color: white;
+}
+
+.dark-mode .flex.text-sm.text-gray-600 {
+    color: white;
+}

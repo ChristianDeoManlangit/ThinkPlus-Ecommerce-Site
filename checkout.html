@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkPad | Think+</title>
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head><div class="mt-4 text-center">
+<body>
+    <!-- Navigation - full width background -->
+    <!-- Navigation - full width background -->
+    <nav class="w-full py-4 main-nav">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html#home" class="flex items-center">
+                    <img src="assets/icon.png" alt="Think+" class="h-8 w-8 mr-2">
+                    <span class="font-medium">Think+</span>
+                </a>
+            </div>
+            <div class="flex items-center">
+                <div class="flex items-center space-x-6 desktop-menu">
+                    <a href="index.html#shop" class="text-sm">All products</a>
+                    <a href="#" class="text-sm">Contact us</a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle ml-4 focus:outline-none" aria-label="Toggle dark mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="theme-light-icon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="theme-dark-icon h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="hamburger-menu ml-4">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="close-menu"></div>
+        <a href="index.html#shop" class="block">All products</a>
+        <a href="#" class="block">Contact us</a>
+        <div class="mobile-actions">
+            <button id="mobile-theme-toggle" class="w-full bg-red-600 text-white">Toggle Dark Mode</button>
+        </div>
+    </div>
+    
+    <div class="container mx-auto px-4 py-2">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+            <!-- Left side - Product Summary -->
+            <div class="p-6">
+                <div class="mb-8 flex justify-center">
+                    <img id="product-image" src="" alt="Product" class="max-w-xs mx-auto rounded-lg">
+                </div>
+
+                <div class="text-center">
+                    <h1 id="product-name" class="text-2xl font-semibold mb-1"></h1>
+                    <div id="product-price" class="text-xl mb-2"></div>
+                </div>
+            </div>
+
+            <!-- Right side - Payment Form -->
+            <div class="p-6">
+                <h2 class="text-xl font-semibold mb-6">Payment details</h2>
+                <form id="checkout-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="first-name" class="block text-sm mb-1">First name*</label>
+                            <input type="text" id="first-name" placeholder="Your first name" class="w-full p-2 border border-gray-300 rounded" required>
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm mb-1">Last name*</label>
+                            <input type="text" id="last-name" placeholder="Your last name" class="w-full p-2 border border-gray-300 rounded" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm mb-1">Email address*</label>
+                        <input type="email" id="email" placeholder="Email address" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+
+                    <div class="flex items-center mb-4">
+                        <label class="block text-sm mr-4">Quantity</label>
+                        <button type="button" id="decrease-quantity" class="w-8 h-8 border border-gray-300 rounded-full flex items-center justify-center">−</button>
+                        <span id="quantity" class="mx-4">1</span>
+                        <button type="button" id="increase-quantity" class="w-8 h-8 border border-gray-300 rounded-full flex items-center justify-center">+</button>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="country" class="block text-sm mb-1">Country/Region*</label>
+                        <select id="country" class="w-full p-2 border border-gray-300 rounded" required>
+                            <option value="Philippines">Philippines</option>
+                            <option value="United States">United States</option>
+                            <option value="Canada">Canada</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Japan">Japan</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="address" class="block text-sm mb-1">Address*</label>
+                        <input type="text" id="address" placeholder="Your address" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="city" class="block text-sm mb-1">City*</label>
+                        <input type="text" id="city" placeholder="Your city" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="zip" class="block text-sm mb-1">ZIP Code*</label>
+                        <input type="text" id="zip" placeholder="Your zip code" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="phone" class="block text-sm mb-1">Phone*</label>
+                        <div class="flex">
+                            <div class="p-2 border border-gray-300 rounded-l">
+                                <span>+63</span>
+                            </div>
+                            <input type="tel" id="phone" placeholder="905 123 4567" class="flex-grow p-2 border border-gray-300 rounded-r" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="card" class="block text-sm mb-1">Card*</label>
+                        <input type="text" id="card" placeholder="Card number" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+
+                    <div class="text-right mb-6">
+                        <div class="text-sm text-gray-600">Total due: <span id="total-amount" class="font-semibold"></span></div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-red-600 text-white py-3 px-4 rounded-md hover:bg-red-700">Buy now</button>
+
+                    <div class="mt-4 text-center text-sm text-gray-500">
+                        <span class="flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            Payments are secure & encrypted
+                        </span>
+                        <p class="mt-4 text-xs italic">
+                            Note: This website is intended for development and demonstration purposes only. It was created by Christian Deo Manlangit to practice and showcase front-end programming skills. No data entered on this site is stored or used beyond this demonstration.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+    </div>
+
+<footer class="border-t border-gray-200 py-8 mt-16 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p class="footer-author">Created By <span>Christian Deo Manlangit</span></p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">© 2025 Think+. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://github.com/ChristianDeoManlangit" class="text-gray-500 hover:text-gray-600 dark:hover:text-white">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
